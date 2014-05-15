@@ -13,7 +13,7 @@ var linksSchema = new mongoose.Schema({
   base_url: String,
   code: String,
   title: String,
-  visits: Number,
+  visits: {type: Number, default: 0},
   createdAt: { type: Date, default: Date.now }
 });
 
