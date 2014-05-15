@@ -17,8 +17,7 @@ var path = require('path');
 //   }
 // });
 
-exports.linksSchema = new mongoose.Schema({
-  id: Number,
+var linksSchema = new mongoose.Schema({
   url: String,
   base_url: String,
   code: String,
@@ -27,6 +26,11 @@ exports.linksSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
+linksSchema.static('onSaveHandler', function(link, callback) {
+  console.log('whutt');
+});
+
+exports.linksSchema = linksSchema;
 
 
 

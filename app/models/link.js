@@ -6,8 +6,20 @@ var crypto = require('crypto');
 var Link = mongoose.model('Link', linksSchema);
 
 Link.on('save', function(link) {
-  link.methods.onSaveHandler();
+  link.static.onSaveHandler();
 });
+
+// dummy
+// var one = new Link({
+//   url: 'www.yahoo.com',
+//   base_url: 'www.yahoo.com',
+//   code: 'woBigm',
+//   title: 'one',
+//   visits: 1,
+//   createdAt: null
+// });
+
+// one.save();
 
 // var Link = db.Model.extend({
 //   tableName: 'urls',
