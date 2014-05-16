@@ -118,7 +118,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('env') === 'production') {
-      // add your production server task here
+      shell: {
+        push: {
+          command: 'git push azure';
+        }
+      }
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
